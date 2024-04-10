@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 
-extern crate rand;
-
 use crate::rand::prelude::SliceRandom;
 use rand::thread_rng;
 

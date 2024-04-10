@@ -3,7 +3,6 @@
 use crate::messages::*;
 use midir::{Ignore, MidiIO, MidiInput, MidiInputConnection, MidiOutput, MidiOutputConnection};
 use std::error::Error;
-use std::io::{stdin, stdout, Write};
 use std::sync::mpsc::Sender;
 
 pub fn set_up_midi_in_connection(
@@ -71,7 +70,7 @@ pub fn get_midi_out_connection(port_index: usize) -> Result<MidiOutputConnection
 
 pub fn select_port<T: MidiIO>(
     midi_io: &T,
-    descr: &str,
+    _descr: &str,
     port_index: usize,
 ) -> Result<T::Port, Box<dyn Error>> {
     let midi_ports = midi_io.ports();
